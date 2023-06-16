@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ANCORE PAGE</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <link rel="stylesheet" href="assets/css/main.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <style>
+      /* Header */
+      #header {
+          text-align: center;
+          padding: 3em 0 0 0;
+          background-color: #000; 
+          background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
+          background-position: top left, top left, top left;
+          background-size: 100% 6em, 100% 6em, auto;
+          background-repeat: no-repeat, no-repeat, repeat;
+      }
+
+      #header h1 {
+          padding: 0 0 1em 0;
+          margin: 0;
+      }
+
+      #header h1 a {
+          font-size: 2em;
+          letter-spacing: -0.025em;
+          color: #fff; 
+          border: 0;
+      }
+
+      #nav {
+          cursor: default;
+          background-color: #000; 
+          background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images/bg01.png");
+          padding: 0;
+      }
+
+      #nav:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 0.30em;
+          background-color: #ffadf3;
+      }
+
+      #nav > ul {
+          margin: 0;
+      }
+
+      #nav > ul > li {
+          position: relative;
+          display: inline-block;
+          margin-left: 1em;
+      }
+
+      #nav > ul > li a {
+          color: #fff;
+          text-decoration: none;
+          border: 0;
+          display: block;
+          padding: 1.5em 0.5em 1.35em 0.5em;
+      }
+
+      #nav > ul > li:first-child {
+          margin-right: 0em;
+      }
+
+      #nav > ul > li:hover a {
+          color: #fff;
+      }
+
+      #nav > ul > li.current {
+          font-weight: 600;
+      }
+
+      .menu-toggle {
+         display: flex;
+         flex-direction: column-reverse;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         background-color: transparent;
+         border: none;
+         cursor: pointer;
+         margin-top: -5em;
+      }
+
+      .menu-toggle .bar {
+         width: 30px;
+         height: 3px;
+         background-color: #ffadf3;
+         margin: 3px 0;
+         margin-left: 3em;
+      }
+
+      .search-box {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         margin-left: auto;
+      }
+
+      .search-box input[type="text"] {
+         width: 200px;
+         padding: 6px;
+         border: none;
+         border-bottom: 1px solid #fff;
+         background-color: transparent;
+         color: #fff;
+         font-size: 16px;
+         margin-right: 10px;
+      }
+
+      .search-box input[type="text"]::placeholder {
+         color: #fff;
+         opacity: 0.5;
+      }
+
+      .search-btn {
+         background-color: transparent;
+         border: none;
+         color: #fff;
+         font-size: 20px;
+         cursor: pointer;
+      }
+
+      #nav ul {
+         display: flex;
+         align-items: center;
+         margin-left: auto;
+      }
+
+      #nav .login-btn,
+      #nav .signup-btn {
+         margin-left: 10px;
+         color: #fff;
+         background-color: transparent;
+         border: none;
+         display: flex;
+         align-items: center;
+      }
+
+      #nav .login-btn i {
+         margin-right: 5px;
+      }
+   </style>
+</head>
+<body class="is-preload">
+   <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+         <!-- Logo -->
+         <h1><a href="index.html" id="logo">ANCORE PAGE</a></h1>
+         <!-- Nav -->
+         <nav id="nav">
+            <button class="menu-toggle" onclick="toggleMenu()">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </button>
+            <ul>
+               <li><a href="concert.html">공연</a></li>
+               <li><a href="reservation.html">예매처</a></li>
+               <li><a href="event.html">이벤트</a></li>
+               <li><a href="community.html">커뮤니티</a></li>
+               <li><a href="calendar.html">캘린더</a></li>
+               <li><a href="rank.html">순위</a></li>
+               <li><a href="concerthall.html"><strong><u>공연장</u></strong></a></li>
+            </ul>
+            <div class="search-box">
+               <input type="text" placeholder="검색" />
+               <button class="search-btn"><i class="fas fa-search"></i></button>
+               <button class="login-btn"><i class="fas fa-user"></i>로그인</button>
+               <button class="signup-btn">회원가입</button>
+            </div>
+         </nav>
+      </div>
+      <script>
+         function toggleMenu() {
+            document.getElementById("nav").classList.toggle("show");
+         }
+      </script>
+   </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .top-section {
+      border: 2px solid gray;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .image-container {
+      width: 300px;
+      margin-right: 20px;
+    }
+
+    .text-container {
+      flex-grow: 1;
+    }
+
+    .font-bold {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .font-normal {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+
+    .bottom-section {
+      margin-top: 20px;
+    }
+
+    button {
+      margin-right: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #map-section,
+    #seat-and-view-section,
+    #available-shows-section {
+      margin-top: 20px;
+    }
+
+    .show-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .show-item img {
+      width: 80px;
+      margin-right: 10px;
+    }
+
+    .font-light-gray {
+      font-size: 10px;
+      color: gray;
+    }
+
+    .button-active {
+      border: 2px solid pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-section">
+      <div class="image-container">
+        <img src="image.jpg" alt="Image">
+      </div>
+      <div class="text-container">
+        <p class="font-bold">올림픽공원 SK올림픽핸드볼경기장</p>
+        <p class="font-normal">위치 : 서울 송파구 방이동 88</p>
+        <p class="font-normal">대표번호 : 02-410-1114</p>
+        <p class="font-normal">홈페이지 : http://www.olympicpark.co.kr/</p>
+      </div>
+    </div>
+    <div class="bottom-section">
+      <button id="map-button" onclick="showMap()" class="button-active">공연장 위치</button>
+      <button id="seat-button" onclick="showSeatAndView()">좌석 배치&시야</button>
+      <button id="shows-button" onclick="showAvailableShows()">예매 가능 공연</button>
+    </div>
+    <div id="map-section">
+      <iframe src="https://www.google.com/maps/place/%EC%98%AC%EB%A6%BC%ED%94%BD%ED%99%80/data=!3m1!4b1!4m6!3m5!1s0x357caf89b7318f5d:0x4b425bd9440d40f8!8m2!3d37.5147044!4d127.1275107!16s%2Fg%2F11f6158r0s?entry=ttu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div id="seat-and-view-section" class="hidden">
+      <p class="font-normal">좌석 배치</p>
+      <img src="seat.jpg" alt="Seat Image">
+      <p class="font-normal">시야</p>
+      <ul>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=104030" target="_blank">플로어 가/나구역</a></li>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=104031" target="_blank">플로어 다/라구역</a></li>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=104026" target="_blank">플로어 F구역</a></li>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=104022" target="_blank">1층 B/D구역</a></li>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=104023" target="_blank">1/2층 C구역</a></li>
+        <li><a href="https://gall.dcinside.com/mgallery/board/view/?id=forestella&no=91969" target="_blank">2층 A/E구역</a></li>
+      </ul>
+    </div>
+    <div id="available-shows-section" class="hidden">
+      <div class="show-item">
+        <img src="poster1.jpg" alt="Poster 1">
+        <p class="font-bold">MAMAMOO WORLD TOUR 〈MY CON〉 ENCORE－SEOUL</p>
+        <p class="font-light-gray">2023.06.16 ~
+2023.06.18</p>
+        <p class="font-light-gray">올림픽공원 SK올림픽핸드볼경기장</p>
+      </div>
+      <hr>
+      <div class="show-item">
+        <img src="poster2.jpg" alt="Poster 2">
+        <p class="font-bold">〈팬텀싱어4〉 콘서트－서울</p>
+        <p class="font-light-gray">2023.07.14 ~
+2023.07.16</p>
+        <p class="font-light-gray">올림픽공원 올림픽홀</p>
+      </div>
+      <hr>
+      <div class="show-item">
+        <img src="poster3.jpg" alt="Poster 3">
+        <p class="font-bold">〈불타는 트롯맨〉 TOP7 서울콘서트</p>
+        <p class="font-light-gray">2023.08.25 ~
+2023.08.27</p>
+        <p class="font-light-gray">올림픽공원 올림픽홀</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showMap() {
+      var mapSection = document.getElementById("map-section");
+      var seatAndViewSection = document.getElementById("seat-and-view-section");
+      var availableShowsSection = document.getElementById("available-shows-section");
+      mapSection.classList.remove("hidden");
+      seatAndViewSection.classList.add("hidden");
+      availableShowsSection.classList.add("hidden");
+      // Add active class to map button
+      var mapButton = document.getElementById("map-button");
+      var seatButton = document.getElementById("seat-button");
+      var showsButton = document.getElementById("shows-button");
+      mapButton.classList.add("button-active");
+      seatButton.classList.remove("button-active");
+      showsButton.classList.remove("button-active");
+    }
+
+    function showSeatAndView() {
+      var mapSection = document.getElementById("map-section");
+      var seatAndViewSection = document.getElementById("seat-and-view-section");
+      var availableShowsSection = document.getElementById("available-shows-section");
+      mapSection.classList.add("hidden");
+      seatAndViewSection.classList.remove("hidden");
+      availableShowsSection.classList.add("hidden");
+      // Add active class to seat button
+      var mapButton = document.getElementById("map-button");
+      var seatButton = document.getElementById("seat-button");
+      var showsButton = document.getElementById("shows-button");
+      mapButton.classList.remove("button-active");
+      seatButton.classList.add("button-active");
+      showsButton.classList.remove("button-active");
+    }
+
+    function showAvailableShows() {
+      var mapSection = document.getElementById("map-section");
+      var seatAndViewSection = document.getElementById("seat-and-view-section");
+      var availableShowsSection = document.getElementById("available-shows-section");
+      mapSection.classList.add("hidden");
+      seatAndViewSection.classList.add("hidden");
+      availableShowsSection.classList.remove("hidden");
+      // Add active class to shows button
+      var mapButton = document.getElementById("map-button");
+      var seatButton = document.getElementById("seat-button");
+      var showsButton = document.getElementById("shows-button");
+      mapButton.classList.remove("button-active");
+      seatButton.classList.remove("button-active");
+      showsButton.classList.add("button-active");
+    }
+  </script>
+</body>
+</html>
